@@ -35,5 +35,5 @@ Step 4. Observe the waveform in gtkwave
 ```
 $ gtkwave tb_good_mux.vcd
 ```
-
-![Alt Text](images/gtkwave_gui.png)
+Observing waveform through gtkwave
+![Alt Text](images/gtkwave_goodmux.png)
