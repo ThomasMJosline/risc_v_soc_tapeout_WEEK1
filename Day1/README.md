@@ -17,7 +17,7 @@ Design and testbench is provided to the iverilog simulatior. A .vcd (Value Chang
 <img src="images/flow.png" alt="Alt Text" width="500"/>
 
 
-## III. Siumulating a 2 to 1 Multiplexer
+## III. Simulating a 2 to 1 Multiplexer
 
 Step 1. Go to the directory with the testbench and design files
 ```
@@ -37,3 +37,12 @@ $ gtkwave tb_good_mux.vcd
 ```
 Observing waveform through gtkwave
 ![Alt Text](images/gtkwave_goodmux.png)
+
+## IV. Introduction to Yosys & Gate Libraries
+
+ - Used to convert RTL to netlist (which is the design implemented as collection of standard cells).
+
+### What is .lib file?
+ - Collection of basic logical modules, which are the standard cells (AND, OR, NOR...).
+ - Different versions of same logical module:
+     Each of these versions differ in speed, area, power comsumption etc. While some versions are used in order to make hardware that operates at higher frequency (at the cost of area and power consumption), the slower versions are necessary in cases where area or power consumption are the bottleneck.
