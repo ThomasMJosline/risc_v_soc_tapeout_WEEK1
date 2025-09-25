@@ -71,9 +71,15 @@ Step 5. Generating the netlist
 ```
 $ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
-
+The standard cell used to make the netlist can be seen:
 ![Alt Text](images/abc_liberty.png)
 
+Step 6. To view the netlist
+```
+$ show
+```
+The generated netlist:
+![Alt Text](images/netlist.png)
 
 
 Observing waveform through gtkwave
