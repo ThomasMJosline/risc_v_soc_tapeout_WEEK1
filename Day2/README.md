@@ -248,4 +248,16 @@ endmodule
 
 ## 5. Simulating and synthesis of flip-flops
 
+### Simulation
 
+```
+$ iverilog dff_asyncres.v tb_dff_asyncres.v
+```
+
+```
+./a.out
+```
+
+```
+
+```
