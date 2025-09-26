@@ -285,7 +285,7 @@ $ gtkwave tb_dff_asyncres.vcd
    synth -top dff_asyncres
    ```
    
-5. Map flip-flops:
+5. Map the designs to the flip-flops in the library file:
    ```
    dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
@@ -293,11 +293,17 @@ $ gtkwave tb_dff_asyncres.vcd
    ```
    abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
-7. Visualize the gate-level netlist:
+7. Observe the gate-level netlist:
    ```
    show
    ```
-![Screenshot_2025-05-30_11-03-00](https://github.com/user-attachments/assets/fa8337df-e0ec-4b01-9b18-5910768e4421)
+<div align="center">
+  <img src="images/dff_async_net.png" width="800px" />
+</div>
+
+   In the netlist there is inverter. This is because the standard cell of Flip-Flop have active low reset, but our design implements a active high reset.
+
+
 
 
 ---
