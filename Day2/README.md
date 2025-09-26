@@ -250,14 +250,19 @@ endmodule
 
 ### Simulation
 
+1. Compile design and testbench:
 ```
 $ iverilog dff_asyncres.v tb_dff_asyncres.v
 ```
-
+2. Run:
 ```
-./a.out
+$ ./a.out
 ```
-
+3. Observe the waveform:
 ```
-
+$ gtkwave tb_dff_asyncres.vcd 
 ```
+<div align="center">
+  <img src="images/dff_async.png" width="500px" />
+  <img src="images/dff_async_1.png" width="500px" />
+</div>
