@@ -270,40 +270,47 @@ $ gtkwave tb_dff_asyncres.vcd
 
 1. Start Yosys (from directory containing the design):
    ```
-   yosys
+   $ yosys
    ```
 2. Reading Liberty library:
    ```
-   read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+   $ read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
 3. Read verilog code of the Flip-Flop module:
    ```
-   read_verilog dff_asyncres.v
+   $ read_verilog dff_asyncres.v
    ```
 4. Synthesize:
    ```
-   synth -top dff_asyncres
+   $ synth -top dff_asyncres
    ```
    
 5. Map the designs to the flip-flops in the library file:
    ```
-   dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+   $ dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
 6. Technology mapping:
    ```
-   abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+   $ abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
    ```
 7. Observe the gate-level netlist:
    ```
-   show
+   $ show
    ```
+   
 <div align="center">
   <img src="images/dff_async_net.png" width="800px" />
 </div>
 
    In the netlist there is inverter. This is because the standard cell of Flip-Flop have active low reset, but our design implements a active high reset.
 
+---
+## 6. Implementing multiplication with 2 as shifting
 
+<div align="center">
+  <img src="images/mult2.png" width="800px" />
+</div>
 
+Here there is no any cell associated with the design, the multiplication by 2 operation is realized as left shift by 1.
 
 ---
