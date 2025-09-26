@@ -26,10 +26,16 @@ The sky130_fd_sc_hd__tt_025C_1v80.lib can be opened in some text editor. Here "g
 $ gedit sky130_fd_sc_hd__tt_025C_1v80.lib 
 ```
 
-<img src="images/lib_filr.png" alt="Alt Text" width="500"/>
+<img src="images/lib_file.png" alt="Alt Text" width="500"/>
 
 
-## 3. Simulating a 2 to 1 Multiplexer
+### Different versions of same logic
+
+Here I have shown the two versions of 2 input and standard cells:
+<div align="center">
+  <img src="images/and_v0.png" width="300px" />
+  <img src="images/and_v1.png" width="300px" />
+</div>
 
 Step 1. Go to the directory with the testbench and design files:
 ```
