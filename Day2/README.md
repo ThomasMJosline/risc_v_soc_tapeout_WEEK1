@@ -248,7 +248,7 @@ endmodule
 
 ## 5. Simulating and synthesis of flip-flops
 
-### Simulation
+### Simulation 
 
 1. Compile design and testbench:
 ```
@@ -263,6 +263,41 @@ $ ./a.out
 $ gtkwave tb_dff_asyncres.vcd 
 ```
 <div align="center">
-  <img src="images/dff_async.png" width="500px" />
-  <img src="images/dff_async_1.png" width="500px" />
+  <img src="images/dff_async.png" width="800px" />
 </div>
+
+### Synthesis using Yosys
+
+1. Start Yosys (from directory containing the design):
+   ```
+   yosys
+   ```
+2. Reading Liberty library:
+   ```
+   read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+3. Read verilog code of the Flip-Flop module:
+   ```
+   read_verilog dff_asyncres.v
+   ```
+4. Synthesize:
+   ```
+   synth -top dff_asyncres
+   ```
+   
+5. Map flip-flops:
+   ```
+   dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+6. Technology mapping:
+   ```
+   abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+7. Visualize the gate-level netlist:
+   ```
+   show
+   ```
+![Screenshot_2025-05-30_11-03-00](https://github.com/user-attachments/assets/fa8337df-e0ec-4b01-9b18-5910768e4421)
+
+
+---
