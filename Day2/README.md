@@ -1,12 +1,21 @@
-# Day 1 
+# Day 2
 
-## 1. HDL Design, Simulatior and Testbench
+## 1. Understanding .lib file
 
-### **1. HDL Design**
-HDL design is the description of the hardware logic intended to realize in either a Hardware Description Language such as System Verilog or VHDL.
+### **1. Timing libraries**
+The .lib file here corresponds to the Process Design Kit (PDK) used in the program. The PDK used here is the SKY130 PDK which is an open-source PDK based SkyWater Technology's 130 nm CMOS technology. These files contain the all standard cells used to realize our complex designs, along with other specs such as power consumption, area, timing etc.  
 
-### **2. Simulatior**
-Simulator is the tool used to check the functionality and behaviour of the Hardware implemented through the HDL design. This is done by supplying some set of predescribed inputs into the design and observing the corresponding outputs.
+### **2. Undertanding the library filename**
+The three important parameters regarding a device are:
+ - Process
+ - Voltage
+ - Temperature
+   
+The .lib files are prepared for different cases of the above parameter. In our case the library used is: 
+ ### sky130_fd_sc_hd__tt_025C_1v80.lib 
+ 
+Here the "tt_025c_1v80" part indicates the process, temperature and voltage parameters:
+ -
 
 ### **3. Testbench**
 Testbench is a file that is used to supply a set of input values to the design with whatever timings as we want observe. Testbench file together with the Simulator is used to verify the functionality of the design. In this RISC-V SoC tapeout program, the simulatior used wil be Icarus Verilog, which is an open source simulator.
