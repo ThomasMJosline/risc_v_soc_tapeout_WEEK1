@@ -223,3 +223,5 @@ Netlist after synthesis using yosys :
   
 
 <img src="images/dff_const3_synth.png" alt="Alt Text" width="800"/>
+
+Here all the D Flip-FLops that were in the design are not removed during optimization
