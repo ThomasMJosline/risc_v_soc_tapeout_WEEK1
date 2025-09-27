@@ -207,7 +207,7 @@ endgenerate
 
 ### Ripple Carry Adder
 
-<div align="center"><img src="images/RCA.png" alt="Alt Text" width="800"/></div>
+<div align="center"><img src="images/RCA.jpeg" alt="Alt Text" width="800"/></div>
  - Generate for loop can be used to instantiate the multiple adder in this case.
 
 ## 6. Labs on For loop and Generate For loop
