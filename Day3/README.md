@@ -150,7 +150,8 @@ Waveform during transition of reset:
 Netlist after synthesis using yosys :
 
  - Statistics:
-   <img src="images/dff_const1_stat.png" alt="Alt Text" width="800"/>
+   
+   <img src="images/dff_const1_stat.png" alt="Alt Text" width="300"/>
 
 <img src="images/dff_const1_synth.png" alt="Alt Text" width="800"/>
 
@@ -176,7 +177,8 @@ Waveform during transition of reset:
 Netlist after synthesis using yosys :
 
  - Statistics:
-   <img src="images/dff_const2_stat.png" alt="Alt Text" width="800"/>
+   
+   <img src="images/dff_const2_stat.png" alt="Alt Text" width="300"/>
 
    Here no D Flip-Flop is instantiated as the overall design simplifies during optimization.
 
