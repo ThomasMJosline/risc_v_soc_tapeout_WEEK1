@@ -144,7 +144,15 @@ endmodule
  - When the ```reset``` signal is made low the output ```q``` beccomes high in the next posedge of the clock.
 
 Waveform during transition of reset: 
-![Alt Text](images/dff_const1_sim.png)
+
+<img src="images/dff_const1_sim.png" alt="Alt Text" width="800"/>
+
+Netlist after synthesis using yosys :
+
+ - Statistics:
+   <img src="images/dff_const1_stat.png" alt="Alt Text" width="800"/>
+
+<img src="images/dff_const1_synth.png" alt="Alt Text" width="800"/>
 
 ### Lab7 
 ```verilog
@@ -162,4 +170,14 @@ endmodule
  - When the ```reset``` signal is made low the output ```q``` beccomes high in the next posedge of the clock.
 
 Waveform during transition of reset:
-![Alt Text](images/dff_const2_sim.png)
+
+<img src="images/dff_const2_sim.png" alt="Alt Text" width="800"/>
+
+Netlist after synthesis using yosys :
+
+ - Statistics:
+   <img src="images/dff_const2_stat.png" alt="Alt Text" width="800"/>
+
+   Here no D Flip-Flop is instantiated as the overall design simplifies during optimization.
+
+<img src="images/dff_const2_synth.png" alt="Alt Text" width="800"/>
