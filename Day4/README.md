@@ -107,10 +107,43 @@ The output changes only when there is activity in ```sel``` input. This is flop 
 
 ```
 $ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
-
 ```
 <img src="images/sim_bad_net.png" alt="Alt Text" width="500"/>
  
 It can be seen that synthesis version of the above design is a combinatorial circuit (here it is a mux).
 
 ### 3. Blocking assignment Caveat
+
+```verilog
+module blocking_caveat (input a , input b , input  c, output reg d); 
+reg x;
+always @ (*)
+begin
+	d = x & c;
+	x = a | b;
+end
+endmodule
+```
+
+ - Internal signal ```x``` gets the value of  ```a|b```.
+ - Output ```d``` is the ``` x & c ```. 
+ - As there are blocking assignment the order of the above statements are will affect the output ```d```.
+
+#### Simulation of RTL using iverilog:
+
+<img src="images/sim_block.png" alt="Alt Text" width="500"/>
+
+#### Synthesis using Yosys
+ Netlist generated:
+
+<img src="images/synth_block.png" alt="Alt Text" width="500"/>
+
+#### GLS using iverilog:
+
+```
+$ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+```
+<img src="images/sim_block_net.png" alt="Alt Text" width="500"/>
+ 
+ - The difference between simulation of RTL design and netlist can be observed. This is because of blocking statment which make the hardware by reading the line sequentially.
+
