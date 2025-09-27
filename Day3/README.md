@@ -183,3 +183,43 @@ Netlist after synthesis using yosys :
    Here no D Flip-Flop is instantiated as the overall design simplifies during optimization.
 
 <img src="images/dff_const2_synth.png" alt="Alt Text" width="800"/>
+
+
+### Lab8
+```verilog
+module dff_const3(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+ - Two D Flip- Flops; one with asychronous set and other with asynchronous set.
+ - When out of reset state, ```q1``` is always 1.
+ - But this need not simplify the design and lead to removal of Flip-Flop elements from the final netlist.
+
+Waveform during transition of reset:
+
+<img src="images/dff_const3_sim.png" alt="Alt Text" width="800"/>
+
+Netlist after synthesis using yosys :
+
+ - Statistics:
+   
+   <img src="images/dff_const3_stat.png" alt="Alt Text" width="300"/>
+
+  
+
+<img src="images/dff_const3_synth.png" alt="Alt Text" width="800"/>
