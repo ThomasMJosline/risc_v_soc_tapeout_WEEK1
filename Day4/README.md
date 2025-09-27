@@ -12,7 +12,7 @@
   
 ### GLS using iverilog
 
-<img src="images/gls.png" alt="Alt Text" width="500"/>
+<div align="center"><img src="images/gls.png" alt="Alt Text" width="500"/> </div>
 
 This is same as running testbenches for RTL design, except:
 
@@ -34,7 +34,7 @@ This is same as running testbenches for RTL design, except:
    - If the always block contains these statements, the inside of the always block will be executed line by line or sequentially.
    - One statement "blocks" the execution of the below statement.
 
- -```<=``` : Non-Blocking assignmnet:
+ - ```<=``` : Non-Blocking assignmnet:
    - Execute all of the RHS when entering always block and assign it to RHS.
    - Parellel execution.
 
@@ -56,12 +56,12 @@ Working:
 
 #### Simulation of RTL using iverilog:
 
-<img src="images/sim_ternary.png" alt="Alt Text" width="500"/>
+<div align="center"><img src="images/sim_ternary.png" alt="Alt Text" width="800"/></div>
 
 #### Synthesis using Yosys
  Netlist generated:
 
-<img src="images/synth_ternary.png" alt="Alt Text" width="500"/>
+<div align="center"><img src="images/synth_ternary.png" alt="Alt Text" width="500"/></div>
 
 #### GLS using iverilog:
 
@@ -69,7 +69,7 @@ Working:
 $ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
 
 ```
-<img src="images/sim_ternary_net.png" alt="Alt Text" width="500"/>
+<div align="center"><img src="images/sim_ternary_net.png" alt="Alt Text" width="800"/></div>
  
 ---
 
@@ -92,14 +92,14 @@ Working:
 
 #### Simulation of RTL using iverilog:
 
-<img src="images/sim_bad_mux.png" alt="Alt Text" width="500"/>
+<div align="center"><img src="images/sim_bad_mux.png" alt="Alt Text" width="800"/></div>
 
 The output changes only when there is activity in ```sel``` input. This is flop type behaviour.
 
 #### Synthesis using Yosys
  Netlist generated:
 
-<img src="images/synth_bad_mux.png" alt="Alt Text" width="500"/>
+<div align="center"><img src="images/synth_bad_mux.png" alt="Alt Text" width="500"/></div>
 
  - In the netlist a mux has been instantiated.
 
@@ -108,7 +108,7 @@ The output changes only when there is activity in ```sel``` input. This is flop 
 ```
 $ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
 ```
-<img src="images/sim_bad_net.png" alt="Alt Text" width="500"/>
+<div align="center"><img src="images/sim_bad_mux_net.png" alt="Alt Text" width="800"/></div>
  
 It can be seen that synthesis version of the above design is a combinatorial circuit (here it is a mux).
 
@@ -131,19 +131,19 @@ endmodule
 
 #### Simulation of RTL using iverilog:
 
-<img src="images/sim_block.png" alt="Alt Text" width="500"/>
+<div align="center"><img src="images/sim_block.png" alt="Alt Text" width="800"/></div>
 
 #### Synthesis using Yosys
  Netlist generated:
 
-<img src="images/synth_block.png" alt="Alt Text" width="500"/>
+<div align="center"><img src="images/synth_block.png" alt="Alt Text" width="500"/></div>
 
 #### GLS using iverilog:
 
 ```
 $ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
 ```
-<img src="images/sim_block_net.png" alt="Alt Text" width="500"/>
+<div align="center"><img src="images/sim_block_net.png" alt="Alt Text" width="800"/></div>
  
  - The difference between simulation of RTL design and netlist can be observed. This is because of blocking statment which make the hardware by reading the line sequentially.
 
